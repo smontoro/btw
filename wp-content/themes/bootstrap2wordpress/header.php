@@ -45,13 +45,15 @@
 		<!--=====NAVBAR===========-->
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark px-5">
 		  <a class="navbar-brand" href="#">
-		  	<img src="<?php bloginfo('stylesheet_directory'); ?> /assets/img/logo.png" alt="Bootstrap to Wordpress">
+		  	<img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/logo.png" alt="Bootstrap to Wordpress">
 		  </a>
 		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 		    <span class="navbar-toggler-icon"></span>
 		  </button>
 
 		  <!--If the menu (WP admin area) is not set, then the "menu_class" is applid to "container". In other words, it overwrites the "container_class". -->
+
+		  <div class="ml-auto">
 
 		  <?php
 		  	wp_nav_menu( array(
@@ -62,6 +64,8 @@
 		  	)
 		  	);
 		  ?>
+
+		</div>
 
 
 		</nav><!--END NAVBAR-->
