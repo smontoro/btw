@@ -33,8 +33,14 @@
 	</div><!-- post-image -->
 	<?php } ?>
 	
-	<div class="post-excerpt">
-		<?php the_excerpt(); ?>
-	</div><!-- post-excerpt -->
-	
+	<div class="post-body">
+		<?php the_content(); ?>
+	</div><!-- post-body -->
+
 </article><!-- #post-## -->
+
+			<!-- SIDEBAR
+			========================================================-->
+			<aside class="col-sm-4">
+				<?php get_sidebar(); ?>
+			</aside>

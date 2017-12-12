@@ -9,27 +9,40 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+	<!-- BLOG CONTENT
+	========================================================-->
 
-		<?php
-		while ( have_posts() ) : the_post();
+	<div class="container">
+		<div class="row" id="primary">
 
-			get_template_part( 'template-parts/content', get_post_type() );
+			<main id="content" class="col-sm-8">
 
-			the_post_navigation();
+			<?php while ( have_posts() ) : the_post(); ?>
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+			<?php get_template_part( 'content', 'single'); ?>
 
-		endwhile; // End of the loop.
-		?>
+			<?php bootstrap2wordpress_post_nav(); ?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+			<?php 
+				//If comments are open or we have at least 1 comment, load up the comment template
 
-<?php
-get_sidebar();
-get_footer();
+				if ( comments_open() || get_comments_number() ) :
+					comments_template();
+				endif;
+			?>
+
+			<?php endwhile; // End of the loop. ?>
+
+			</main>
+
+			<!-- SIDEBAR
+			========================================================-->
+			<aside class="col-sm-4">
+				<?php get_sidebar(); ?>
+			</aside>
+
+		
+		</div><!--primary-->
+	</div><!--container-->
+
+<?php get_footer();
