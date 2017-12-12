@@ -22,9 +22,9 @@ if ( post_password_required() ) {
 
 <div id="comments" class="comments-area">
 
-	<?php
-	// You can start editing here -- including this comment!
-	if ( have_comments() ) : ?>
+<div class="comments-wrap"> 
+
+	<?php if ( have_comments() ) : ?>
 		<h2 class="comments-title">
 			<?php
 			$comment_count = get_comments_number();
@@ -37,7 +37,7 @@ if ( post_password_required() ) {
 			} else {
 				printf( // WPCS: XSS OK.
 					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $comment_count, 'comments title', 'bootstrap2wordpress' ) ),
+					esc_html( _nx( '%1$s comment on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $comment_count, 'comments title', 'bootstrap2wordpress' ) ),
 					number_format_i18n( $comment_count ),
 					'<span>' . get_the_title() . '</span>'
 				);
@@ -68,5 +68,7 @@ if ( post_password_required() ) {
 
 	comment_form();
 	?>
+
+</div><!--comments wrap-->
 
 </div><!-- #comments -->

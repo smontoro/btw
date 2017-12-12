@@ -38,9 +38,3 @@
 	</div><!-- post-body -->
 
 </article><!-- #post-## -->
-
-			<!-- SIDEBAR
-			========================================================-->
-			<aside class="col-sm-4">
-				<?php get_sidebar(); ?>
-			</aside>
